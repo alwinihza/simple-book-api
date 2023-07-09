@@ -44,7 +44,7 @@ pipeline {
             slackSend botUser: true, 
             channel: 'general', 
             color: '#00ff00', 
-            message: 'Pipeline ${env.JOB_NAME} running with ${env.GIT_COMMIT}', 
+            message: "Pipeline ${env.JOB_NAME} running with ${env.GIT_COMMIT}", 
             tokenCredentialId: 'Slack OAUTH'
         }
         success {
