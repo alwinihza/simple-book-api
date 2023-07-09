@@ -11,7 +11,7 @@ pipeline {
         DB_NAME = 'book_management_system'
         DB_PASSWORD = 'password'
         DB_PORT = '5432'
-        API_PORT = '8184'
+        API_PORT = '8000'
     }
     stages {
         stage("Cleaning up") {
@@ -37,7 +37,15 @@ pipeline {
     }
     post {
         always {
-            echo 'This will always run'
+            emailext to: "alwinihza@gmail.com",
+            subject: "Livecode Pipeline Notification",
+            body: "Pipeline ${env.JOB_NAME} running with ${env.GIT_COMMIT}",
+            attachLog: true
+            slackSend botUser: true, 
+            channel: 'general', 
+            color: '#00ff00', 
+            message: 'Pipeline ${env.JOB_NAME} running with ${env.GIT_COMMIT}', 
+            tokenCredentialId: 'Slack OAUTH'
         }
         success {
             echo 'This will run only if successful'

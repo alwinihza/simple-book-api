@@ -102,7 +102,7 @@ func main() {
 	router.GET("/init", InitHandler)
 	router.GET("/books", GetBookHandler)
 	router.POST("/books", NewBookHandler)
-	err := router.Run(":8888")
+	err := router.Run(":8000")
 	if err != nil {
 		panic("Failed run server")
 	}
