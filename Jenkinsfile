@@ -18,6 +18,7 @@ pipeline {
             steps {
                 echo 'Cleaning up'
                 sh "${DOCKER_APP} rm -f ${CONTAINER} || true"
+                sh "docker compose down"
             }
         }
 
