@@ -50,19 +50,16 @@ func GetBookHandler(c *gin.Context) {
 func InitHandler(c *gin.Context) {
 	var products = []Book{
 		{
-			ID:     1,
 			Title:  "Book A",
 			Author: "Author A",
 			Year:   1998,
 		},
 		{
-			ID:     2,
 			Title:  "Book B",
 			Author: "Author B",
 			Year:   2022,
 		},
 		{
-			ID:     3,
 			Title:  "Book C",
 			Author: "Author C",
 			Year:   1999,
