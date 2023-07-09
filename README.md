@@ -40,8 +40,18 @@ DB_HOST=${DB_HOST} DB_PORT=${DB_PORT} DB_NAME=${DB_NAME} DB_USER=${DB_USER} DB_P
 
 # Result
 ## Local Run
+### Local Screenshot
 ![LOcal API](./assets/local-API.png)
 ![LOcal API List](./assets/local-API-List.png)
 ![LOcal API Post](./assets/local-API-Post.png)
 
 ## Server Run
+### Server Screenshot
+![Server List](./assets/server%20list.png)
+![Server Post](./assets/server%20post.png)
+
+## Notification
+### EMail Notif
+![Email Notif](./assets/email%20notif.png)
+### Slack NOtif
+![Slack NOtif](./assets/slack%20notif.png)
