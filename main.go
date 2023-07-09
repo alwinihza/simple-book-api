@@ -47,42 +47,6 @@ func GetBookHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, books)
 }
 
-func UpdateBookHandler(c *gin.Context) {
-	id := c.Param("id")
-	var book Book
-	if err := c.ShouldBindJSON(&book); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err.Error(),
-		})
-		return
-	}
-	db, err := DbConn()
-	if err != nil {
-		panic(err.Error())
-	}
-	err = db.Where("id=?", id).First(&book).Error
-	if err != nil {
-		c.JSON(http.StatusNotFound, gin.H{
-			"error": "Book not found",
-		})
-		return
-	}
-	db.Save(&book)
-	c.JSON(http.StatusOK, book)
-}
-
-func DeleteBookHandler(c *gin.Context) {
-	id := c.Param("id")
-	db, err := DbConn()
-	if err != nil {
-		panic(err.Error())
-	}
-	db.Where("id=?", id).Delete(&Book{})
-	c.JSON(http.StatusOK, gin.H{
-		"message": "Book has been deleted",
-	})
-}
-
 func InitHandler(c *gin.Context) {
 	var products = []Book{
 		{
@@ -138,8 +102,6 @@ func main() {
 	router.GET("/init", InitHandler)
 	router.GET("/books", GetBookHandler)
 	router.POST("/books", NewBookHandler)
-	router.PUT("/books/:id", UpdateBookHandler)
-	router.DELETE("/books/:id", DeleteBookHandler)
 	err := router.Run(":8888")
 	if err != nil {
 		panic("Failed run server")
