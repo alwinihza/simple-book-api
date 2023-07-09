@@ -20,38 +20,58 @@ DB_HOST=${DB_HOST} DB_PORT=${DB_PORT} DB_NAME=${DB_NAME} DB_USER=${DB_USER} DB_P
 # INTEGRATION STEPS
 1. Create golang project (you can see in main.go)
 2. Create Dockerfile
-3. Test Dockerfile run
+3. Test Dockerfile Run
+
 ![Test Dockerfile 1](./assets/docker-build.png)
+
 ![Test Dockerfile 2](./assets/docker-build2.png)
+
 ![Docker Images](./assets/docker-images.png)
+
 ![Docker Run](./assets/docker-run.png)
+
 4. Create docker-compose.yml
 5. Test docker-compose.yml
+
 ![Docker compose Up](./assets/docker-compose-up.png)
+
 6. Create Jenkinsfile
 7. Create github
 8. Configure webhook
+
 ![Webhook setting](./assets/webhook%20setting.png)
+
 9. Configure Jenkins' Job with Pipeline Configuration
+
 ![COnfigure 1](./assets/configure-1.png)
+
 ![COnfigure 2](./assets/configure-2.png)
+
 ![COnfigure 3](./assets/configure-3.png)
 
 
 # Result
 ## Local Run
 ### Local Screenshot
+
 ![LOcal API](./assets/local-API.png)
+
 ![LOcal API List](./assets/local-API-List.png)
+
 ![LOcal API Post](./assets/local-API-Post.png)
 
 ## Server Run
 ### Server Screenshot
+
 ![Server List](./assets/server%20list.png)
+
 ![Server Post](./assets/server%20post.png)
 
 ## Notification
 ### EMail Notif
+
 ![Email Notif](./assets/email%20notif.png)
+
 ### Slack NOtif
+
 ![Slack NOtif](./assets/slack%20notif.png)
